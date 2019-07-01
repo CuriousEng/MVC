@@ -1,0 +1,4 @@
+This is implementation of MVC. 
+User class it`s an Entity. Entity contains class that produse objects for DB. There is no any business logic.
+DAO package provides access to objects from DB.
+DataSource - kind of DB(List of users) and methods that working with it. 
