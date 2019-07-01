@@ -1,11 +1,9 @@
 package com.company.model;
 
-
 import com.company.bean.User;
 import com.company.model.service.UserService;
 import com.company.model.service.UserServiceImpl;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MainModel implements Model {
@@ -40,6 +38,11 @@ public class MainModel implements Model {
 
     public void deleteUserById(long id){
         userService.deleteUser(id);
+        loadUsers();
+    }
+
+    public void changeUserData(String name, long id, int level) {
+        userService.createOrUpdateUser(name,id,level);
         loadUsers();
     }
 
