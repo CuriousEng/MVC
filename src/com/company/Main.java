@@ -17,5 +17,6 @@ public class Main {
         controller.setUsersView(usersView);
 
         usersView.fireEventShowAllUsers();
+        usersView.fireEventShowDeletedUsers();
     }
 }
