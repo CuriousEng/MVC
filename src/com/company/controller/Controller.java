@@ -1,11 +1,17 @@
 package com.company.controller;
 
 import com.company.model.Model;
+import com.company.view.EditUserView;
 import com.company.view.UsersView;
 
 public class Controller {
     private Model model;
     private UsersView usersView;
+    private EditUserView editUserView;
+
+    public void setEditUserView(EditUserView editUserView) {
+        this.editUserView = editUserView;
+    }
 
     public void onShowAllUsers(){
         model.loadUsers();

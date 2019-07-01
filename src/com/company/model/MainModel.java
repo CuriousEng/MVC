@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainModel implements Model {
-    UserService userService = new UserServiceImpl();
+    private UserService userService = new UserServiceImpl();
     private ModelData modelData = new ModelData();
 
     @Override
@@ -21,11 +21,13 @@ public class MainModel implements Model {
     public void loadUsers() {
         List<User> list = new ArrayList<>(userService.getUsersBetweenLevels(1, 100));
         modelData.setUsers(list);
+        modelData.setDisplayDeletedUserList(false);
     }
 
-    @Override
     public void loadDeletedUsers() {
         List<User> users = userService.getAllDeletedUsers();
         modelData.setUsers(users);
+        modelData.setDisplayDeletedUserList(true);
     }
+
 }
